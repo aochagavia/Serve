@@ -4,6 +4,10 @@ Serve
 Serve is a simple command line utility to serve the files in the current
 directory via http.
 
+Note: Serve will not show the list of files in the current directory. It
+will only serve files (i.e. `localhost` won't show anything, but
+`localhost/index.html` will)
+
 ### Usage
 
 ```
