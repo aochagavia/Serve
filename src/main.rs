@@ -8,7 +8,8 @@ use staticfile::Static;
 use std::env;
 
 fn main() {
-    let port = env::args().nth(1).unwrap_or("80".to_string());
+    let default_port = "8080".to_string();
+    let port = env::args().nth(1).unwrap_or(default_port);
     let addr = format!("localhost:{}", port);
 
     match Iron::new(Static::new(".")).http(&*addr) {
