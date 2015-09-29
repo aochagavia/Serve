@@ -4,22 +4,30 @@ Serve
 Serve is a simple command line utility to serve the files in the current
 directory via http.
 
-Usage:
+### Usage
 
 ```
 > serve
-> Listening on port 80
+Listening on port 8080
 ```
 
-By default serve listens on port 80, but you can override this by providing
+By default serve listens on port 8080, but you can override this by providing
 a port number explicitly:
 
 ```
 > serve 3000
-> Listening on port 3000
+Listening on port 3000
 ```
 
-# To do
+### Building it with Cargo
 
-* Better error handling
-* Any ideas? Open a PR!
+As always, Cargo does its job pretty well:
+
+```
+cargo build --release
+```
+
+**Caveat**: Serve depends on Iron, which in turn depends on OpenSSL. Therefore,
+the build will fail in case Cargo can't find OpenSSL in your system. If you are
+unsure about what you have to do, please follow the instructions given in the
+[rust-openssl repo](https://github.com/sfackler/rust-openssl).
