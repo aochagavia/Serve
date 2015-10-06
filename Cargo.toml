@@ -7,3 +7,4 @@ authors = ["Adolfo Ochagavía <aochagavia92@gmail.com>"]
 iron = "0.2.*"
 staticfile = "*"
 docopt = "0.6"
+rustc-serialize = "0.3"
