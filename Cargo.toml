@@ -4,7 +4,8 @@ version = "0.1.0"
 authors = ["Adolfo Ochagavía <aochagavia92@gmail.com>"]
 
 [dependencies]
-iron = "0.2.*"
-staticfile = "*"
-docopt = "0.6"
-rustc-serialize = "0.3"
+iron = "0.6.1"
+staticfile = "0.5.0"
+serde = { version = "1", features = ["derive"] }
+docopt = "1.1.0"
+
