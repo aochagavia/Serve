@@ -1,8 +1,9 @@
 extern crate iron;
 extern crate staticfile;
-extern crate rustc_serialize;
 extern crate docopt;
+extern crate serde;
 
+use serde::Deserialize;
 use iron::Iron;
 use staticfile::Static;
 use docopt::Docopt;
@@ -19,14 +20,14 @@ Options:
     -h, --help  Show this screen
 ";
 
-#[derive(RustcDecodable)]
+#[derive(Deserialize)]
 struct Args {
     arg_port: Option<u16>,
 }
 
 fn main() {
     let args: Args = Docopt::new(USAGE)
-                            .and_then(|dopt| dopt.decode())
+                            .and_then(|dopt| dopt.deserialize())
                             .unwrap_or_else(|e| e.exit());
 
     let port = args.arg_port.unwrap_or(DEFAULT_PORT);
